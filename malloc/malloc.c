@@ -1788,9 +1788,9 @@ static struct malloc_par mp_ =
    when creating a new arena.
  */
 
-static void
-malloc_init_state (mstate av)
-{
+Line 1791: static void
+Line 1792: malloc_init_state (mstate av)
+Line 1793: {
   int i;
   mbinptr bin;
 
