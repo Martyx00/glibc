@@ -1,4 +1,4 @@
-u/* Malloc implementation for multiple threads without lock contention.
+/* Malloc implementation for multiple threads without lock contention.
    Copyright (C) 1996-2018 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
    Contributed by Wolfram Gloger <wg@malloc.de>
@@ -2497,7 +2497,7 @@ sysmalloc (INTERNAL_SIZE_T nb, mstate av)
             size = ALIGN_UP (size + old_size, pagesize);
 
           /* If we are relying on mmap as backup, then use larger units */
-VULNERABLE_LINE:          if ((unsigned long) (size) < (unsigned long) (MMAP_AS_MORECORE_SIZE))
+		  if ((unsigned long) (size) < (unsigned long) (MMAP_AS_MORECORE_SIZE)) /*VULNERABLE_LINE*/
             size = MMAP_AS_MORECORE_SIZE;
 
           /* Don't try if size wraps around 0 */
